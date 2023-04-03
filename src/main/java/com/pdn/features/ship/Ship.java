@@ -17,6 +17,7 @@ public class Ship {
         this.allowedPerContainerSizeMap = allowedPerContainerSizeMap;
     }
 
+    //    TODO: Refactor using stream (filter and count)
     public void loadContainer(Container container) throws ContainerException {
         int allowed = allowedPerContainerSizeMap.get(container.getEquipmentSizeName());
 
@@ -37,6 +38,7 @@ public class Ship {
         containerList.add(container);
     }
 
+    //    TODO: Refactor using stream (filter, findFirst, and removeIf) and optional (orElseThrow)
     public Container dischargeContainer(String equipmentNumber) throws ContainerException {
         Container dischargingContainer = null;
 
@@ -56,6 +58,7 @@ public class Ship {
         return dischargingContainer;
     }
 
+    //    TODO: Refactor using stream (map, filter, collect) and method reference
     public List<String> displayLoadedContainers() {
         List<String> loadedContainersDetails = new ArrayList<>();
 

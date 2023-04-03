@@ -18,6 +18,7 @@ public class FortyGPContainer implements Container {
         return equipmentNumber;
     }
 
+    //    TODO: Refactor using default method
     @Override
     public String getEquipmentType() {
         return "Container";
