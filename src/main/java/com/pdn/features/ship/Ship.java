@@ -78,6 +78,7 @@ public class Ship {
         return loadedContainersDetails;
     }
 
+    //    TODO: Refactor using stream (map, reduce)
     public double calculateContainerTotalGrossWeight() {
         double totalGrossWeight = 0;
 
