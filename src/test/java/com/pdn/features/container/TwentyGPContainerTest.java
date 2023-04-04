@@ -16,6 +16,24 @@ class TwentyGPContainerTest {
     }
 
     @Test
+    void when_getGrossWeight_should_return_0_given_it_was_not_passed_during_initialization() {
+        TwentyGPContainer twentyGPContainer = new TwentyGPContainer("CNTR01");
+
+        double grossWeight = twentyGPContainer.getGrossWeight();
+
+        assertThat(grossWeight).isZero();
+    }
+
+    @Test
+    void when_getGrossWeight_should_return_the_given_gross_weight_during_initialization() {
+        TwentyGPContainer twentyGPContainer = new TwentyGPContainer("CNTR01", 48);
+
+        double grossWeight = twentyGPContainer.getGrossWeight();
+
+        assertThat(grossWeight).isEqualTo(48);
+    }
+
+    @Test
     void when_getEquipmentType_should_return_Container() {
         TwentyGPContainer twentyGPContainer = new TwentyGPContainer("CNTR01");
 

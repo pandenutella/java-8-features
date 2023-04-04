@@ -138,4 +138,23 @@ class ShipTest {
                 "twenty-GP: CNTR01, CNTR03, CNTR05, CNTR07, CNTR09"
         );
     }
+
+    @Test
+    void when_calculateContainerTotalGrossWeight_should_return_the_sum_of_all_gross_weight_in_container_list_given_containers() throws ContainerException {
+        Map<String, Integer> allowedPerContainerSizeMap = new HashMap<String, Integer>() {{
+            put("twenty-GP", 2);
+            put("forty-GP", 2);
+        }};
+
+        Ship ship = new Ship(allowedPerContainerSizeMap);
+
+        ship.loadContainer(new TwentyGPContainer("CNTR01", 50));
+        ship.loadContainer(new FortyGPContainer("CNTR02", 101));
+        ship.loadContainer(new TwentyGPContainer("CNTR03", 52.5));
+        ship.loadContainer(new FortyGPContainer("CNTR04", 103.25));
+
+        double totalGrossWeight = ship.calculateContainerTotalGrossWeight();
+
+        assertThat(totalGrossWeight).isEqualTo(306.75);
+    }
 }

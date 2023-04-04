@@ -78,6 +78,15 @@ public class Ship {
         return loadedContainersDetails;
     }
 
+    public double calculateContainerTotalGrossWeight() {
+        double totalGrossWeight = 0;
+
+        for (Container container : containerList)
+            totalGrossWeight += container.getGrossWeight();
+
+        return totalGrossWeight;
+    }
+
     public List<Container> getContainerList() {
         return containerList;
     }

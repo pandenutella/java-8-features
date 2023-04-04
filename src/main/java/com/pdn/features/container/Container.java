@@ -7,5 +7,7 @@ public interface Container {
 
     String getEquipmentSizeName();
 
+    double getGrossWeight();
+
     boolean isEmpty();
 }
